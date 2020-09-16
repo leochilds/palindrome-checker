@@ -10,12 +10,20 @@
 </head>
 
 <body>
-
+    <label for="input-string">Input String</label>
+    <input id="input-string" type="text" />
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result">Result will display here</p>
     <script>
         const palindrome = (str) => {
             const newstr = str.replace(/[\W_]+/g," ").toUpperCase();
             const revstr = newstr.split('').reverse().join('');
             return newstr == revstr;
+        }
+        const checkPalindrome = () => {
+            const str = document.getElementById('input-string').value;
+            const result = palindrome(str);
+            document.getElementById('result').innerText = result.toString();
         }
     </script>
 </body>
