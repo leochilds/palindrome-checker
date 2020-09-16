@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Palindrome Checker</title>
-    <link rel="stylesheet" href="./w3.css" />
 </head>
 
 <body>
@@ -16,9 +15,9 @@
     <p id="result">Result will display here</p>
     <script>
         const palindrome = (str) => {
-            const newstr = str.replace(/[\W_]+/g," ").toUpperCase();
+            const newstr = str.replace(/[^0-9a-z]/gi, '').toUpperCase();
             const revstr = newstr.split('').reverse().join('');
-            return newstr == revstr;
+            return `Comparing ${newstr} with ${revstr} == ${newstr == revstr}`;
         }
         const checkPalindrome = () => {
             const str = document.getElementById('input-string').value;
@@ -27,4 +26,5 @@
         }
     </script>
 </body>
+
 </html>
