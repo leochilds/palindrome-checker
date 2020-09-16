@@ -6,25 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        main {
+            display: block;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .w3-form {
+            display: block;
+            width: 33%;
+            min-width: 400px;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <label for="input-string">Input String</label>
-    <input id="input-string" type="text" />
-    <button onclick="checkPalindrome()">Check</button>
-    <p id="result">Result will display here</p>
-    <button onclick="checkPalindrome('eye')">Check "eye"</button>
-    <button onclick="checkPalindrome('_eye')">Check "_eye"</button>
-    <button onclick="checkPalindrome('race car')">Check "race car"</button>
-    <button onclick="checkPalindrome('not a palindrome')">Check "not a palindrome"</button>
-    <button onclick="checkPalindrome('A man, a plan, a canal. Panama')">Check "A man, a plan, a canal. Panama"</button>
-    <button onclick="checkPalindrome('never odd or even')">Check "never odd or even"</button>
-    <button onclick="checkPalindrome('nope')">Check "nope"</button>
-    <button onclick="checkPalindrome('almostomla')">Check "almostomla"</button>
-    <button onclick="checkPalindrome('My age is 0, 0 si ega ym.')">Check "My age is 0, 0 si ega ym."</button>
-    <button onclick="checkPalindrome('1 eye for of 1 eye.')">Check "1 eye for of 1 eye."</button>
-    <button onclick="checkPalindrome('0_0 (: /-\ :) 0-0')">Check "0_0 (: /-\ :) 0-0"</button>
-    <button onclick="checkPalindrome('five|\_/|four')">Check "five|\_/|four"</button>
+    <main>
+        <header class="w3-center w3-margin">
+            <h1>Palindrome Checker</h1>
+            <p>This is a palindrome checker that will take a text string and return whether the string is a palindrome
+                or not. It will strip non-alphanumerical characters so you can check phrases.</p>
+        </header>
+        <div class="w3-cell-row">
+            <div class="w3-container w3-cell w3-cell-middle m12 w3-form">
+                <div class="w3-form w3-center">
+                    <label for="input-string">Input String</label>
+                    <input class="w3-input w3-border w3-round-large" id="input-string" placeholder="Input text here..." type="text" />
+                    <button class="w3-btn w3-blue w3-margin w3-round-large" onclick="checkPalindrome('')">Check</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-cell-row">
+            <div class="w3-container w3-cell w3-cell-middle">
+                <div class="w3-panel w3-pale-blue w3-border">
+                    <h3>Results</h3>
+                    <p id="result">Results will display here</p>
+                </div>
+                <p class="w3-center">Can't pick a string? Click a button below to try one of the predefined strings.</p>
+                <button class="w3-btn w3-blue w3-round-large w3-margin" onclick="checkPalindrome('eye')">Check
+                    "eye"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin" onclick="checkPalindrome('_eye')">Check
+                    "_eye"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin" onclick="checkPalindrome('race car')">Check
+                    "race car"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin"
+                    onclick="checkPalindrome('not a palindrome')">Check "not a palindrome"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin"
+                    onclick="checkPalindrome('A man, a plan, a canal. Panama')">Check "A man, a plan, a canal.
+                    Panama"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin"
+                    onclick="checkPalindrome('never odd or even')">Check "never odd or even"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin" onclick="checkPalindrome('nope')">Check
+                    "nope"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin" onclick="checkPalindrome('almostomla')">Check
+                    "almostomla"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin"
+                    onclick="checkPalindrome('My age is 0, 0 si ega ym.')">Check "My age is 0, 0 si ega
+                    ym."</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin"
+                    onclick="checkPalindrome('1 eye for of 1 eye.')">Check "1 eye for of 1 eye."</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin"
+                    onclick="checkPalindrome('0_0 (: /-\ :) 0-0')">Check "0_0 (: /-\ :) 0-0"</button>
+                <button class="w3-btn w3-blue w3-round-large w3-margin" onclick="checkPalindrome('five|\_/|four')">Check
+                    "five|\_/|four"</button>
+            </div>
+        </div>
+
+
+    </main>
+
+
     <script>
         const palindrome = (str) => {
             const newstr = str.replace(/[^0-9a-z]/gi, '').toUpperCase();
