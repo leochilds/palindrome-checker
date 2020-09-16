@@ -13,14 +13,26 @@
     <input id="input-string" type="text" />
     <button onclick="checkPalindrome()">Check</button>
     <p id="result">Result will display here</p>
+    <button onclick="checkPalindrome('eye')">Check "eye"</button>
+    <button onclick="checkPalindrome('_eye')">Check "_eye"</button>
+    <button onclick="checkPalindrome('race car')">Check "race car"</button>
+    <button onclick="checkPalindrome('not a palindrome')">Check "not a palindrome"</button>
+    <button onclick="checkPalindrome('A man, a plan, a canal. Panama')">Check "A man, a plan, a canal. Panama"</button>
+    <button onclick="checkPalindrome('never odd or even')">Check "never odd or even"</button>
+    <button onclick="checkPalindrome('nope')">Check "nope"</button>
+    <button onclick="checkPalindrome('almostomla')">Check "almostomla"</button>
+    <button onclick="checkPalindrome('My age is 0, 0 si ega ym.')">Check "My age is 0, 0 si ega ym."</button>
+    <button onclick="checkPalindrome('1 eye for of 1 eye.')">Check "1 eye for of 1 eye."</button>
+    <button onclick="checkPalindrome('0_0 (: /-\ :) 0-0')">Check "0_0 (: /-\ :) 0-0"</button>
+    <button onclick="checkPalindrome('five|\_/|four')">Check "five|\_/|four"</button>
     <script>
         const palindrome = (str) => {
             const newstr = str.replace(/[^0-9a-z]/gi, '').toUpperCase();
             const revstr = newstr.split('').reverse().join('');
             return `Comparing ${newstr} with ${revstr} == ${newstr == revstr}`;
         }
-        const checkPalindrome = () => {
-            const str = document.getElementById('input-string').value;
+        const checkPalindrome = (input_str) => {
+            const str = input_str ? input_str : document.getElementById('input-string').value;
             const result = palindrome(str);
             document.getElementById('result').innerText = result.toString();
         }
